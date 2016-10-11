@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row" id="new-beer-container">
+    <div class="col-md-4 col-md-offset-4" id="new-beer-area">
+      <%= simple_form_for(@beer, url: add_beer_path, html: { class: 'form-horizontal' }, wrapper: :horizontal_form)   do |f| %>
+        <%= f.input :name, as: :string, label: "Your Beer", required: true, autofocus: true %>
+        <%= f.input :brewery, as: :string, required: true %>
+        <%= f.input :style, as: :string, required: true %>
+        <%= f.input :rating, as: :radio_buttons, collection: 1.upto(5), item_wrapper_class: 'radio-inline', required: true %>
+        <%= f.submit "Add to my notes", class: "btn btn-info button-choice" %>
+      <% end %>
+    </div>
+  </div>
+</div>

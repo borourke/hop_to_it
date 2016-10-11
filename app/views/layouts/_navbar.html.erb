@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default navbar-fixed-top" id="app-navbar">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a class="active-navtab-anchor" href=<%= new_beer_path %>>Beer</a></li>
+        <li><a class="inactive-navtab-anchor" href=<%= notes_path %>>Notes</a></li>
+        <li><a class="inactive-navtab-anchor" href=<%= cellar_path %>>Cellar</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav company-name">
+        <li><p></p></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle inactive-navtab-anchor" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name %><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Preferences</a></li>
+            <li><a href="#">Help</a></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
